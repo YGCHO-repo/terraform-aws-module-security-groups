@@ -1,32 +1,32 @@
 variable "region" {
-    description = "AWS Region - module_v2"
-    type        = string
+  description = "AWS Region - module_v2"
+  type        = string
 }
 
 variable "current_region" {
-    description = "Your AWS current region - module_v2"
-    type        = string      
+  description = "Your AWS current region - module_v2"
+  type        = string
 }
 
 variable "account_id" {
-    description = "Allowed AWS account ID - module_v2"
-    type        = string
+  description = "Allowed AWS account ID - module_v2"
+  type        = string
 }
 
 variable "current_id" {
-    description = "Yor current acccount ID - module_v2"
-    type        = string 
+  description = "Yor current acccount ID - module_v2"
+  type        = string
 }
 
 variable "prefix" {
-    description = "prefix for aws resource and tags - module_v2"
-    type        = string 
+  description = "prefix for aws resource and tags - module_v2"
+  type        = string
 }
 
 variable "name" {
-    description = "security group's name - module_v2"
-    type        = string
-    default = "" 
+  description = "security group's name - module_v2"
+  type        = string
+  default     = ""
 }
 
 variable "vpc_id" {
@@ -40,6 +40,6 @@ variable "tags" {
 }
 
 variable "rules" {
-    description = "security group's rules - module_v2"
-    type        = map(any)
+  description = "security group's rules - module_v2"
+  type        = map(any)
 }
