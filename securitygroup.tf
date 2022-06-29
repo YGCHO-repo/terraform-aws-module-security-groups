@@ -1,16 +1,12 @@
 resource "null_resource" "validate_account" {
     count = var.current_id == var.account_id ? 0 : "Please check that you are using the AWS account - module_v2"
 }
- 
-#220628 - region에 대한 비교 구문 추가
-#변상기M 모듈과 달리 versioning 및 module_name에는 무관하므로 해당 부분에 대한 것을 삭제
-#대신해서 current_region 및 사용 region에 대한 부분을 새롭게 추가
+
 resource "null_resource" "validate_region" {
     count = var.current_region == var.region ? 0 : "Please check that you are setting the region - module_v2"
 }
 
-#220628 - SG 작성 코드 추가
-#의존성 체크에 validate_account 외 신규 생성한 validate_region 추가
+
 resource "aws_security_group" "this" {
     name = format("%s-%s-security-groups", var.prefix, var.name)
     vpc_id = var.vpc_id
