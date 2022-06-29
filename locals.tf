@@ -31,7 +31,7 @@ locals {
       prefix_list_ids  = value.prefix_list_ids
       description      = value.description  
     }
-    if ( 0 < length(value.cidr_blocks)  || 0 < length(value.ipv6_cidr_blocks) || 0 < length(value.prefix_list_ids) && false == value.self && "ingress" == value.type )
+    if (( 0 < length(value.cidr_blocks)  || 0 < length(value.ipv6_cidr_blocks) || 0 < length(value.prefix_list_ids)) && false == value.self && "ingress" == value.type )
   ])
 }
 
@@ -51,7 +51,7 @@ locals {
       prefix_list_ids  = value.prefix_list_ids
       description      = value.description  
     }
-    if ( 0 < length(value.cidr_blocks)  || 0 < length(value.ipv6_cidr_blocks) || 0 < length(value.prefix_list_ids) && false == value.self && "egress" == value.type )
+    if (( 0 < length(value.cidr_blocks)  || 0 < length(value.ipv6_cidr_blocks) || 0 < length(value.prefix_list_ids)) && false == value.self && "egress" == value.type )
   ])
 }
 
